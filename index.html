@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Dancing With My Fate</title>
+<title>Page Title</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -13,17 +13,8 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  background: #000000;
-  color: white;
 }
 
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-  
 /* Header/logo Title */
 .header {
   padding: 80px;
@@ -37,6 +28,75 @@ body {
   font-size: 40px;
 }
 
+/* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Active/current link */
+.navbar a.active {
+  background-color: #666;
+  color: white;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
 /* Footer */
 .footer {
   padding: 20px;
@@ -44,39 +104,54 @@ body {
   background: #000000;
 }
 
-.button {
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
 }
-.button1 {background-color: #4CAF50;} /* Green */
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
 </style>
 </head>
 <body>
 
 <div class="header">
   <h1>Dancing With My Fate</h1>
-  <button class="button button1">Pre-Order The Book Today!</button>
+  <p>If you want the truth, you have to find it for yourself... but I can help you craft your strategy for finding it.</p>
+</div>
+
+<div class="navbar">
+  <a href="https://dancingwithmyfate.com/" class="active">Home</a>
+  <a href="https://dancingwithmyfate.com/about.html">About</a>
+  <a href="https://dancingwithmyfate.com/checkout.html">Buy The Book</a>
+  <a href="https://dancingwithmyfate.com/contact.html" class="right">Contact</a>
 </div>
 
 <div class="row">
+  <div class="side">
+    <h2>About Me</h2>
+    <h5>Photo of me:</h5>
+    <div class="self_image.jpeg" style="height:200px;">Image</div>
+    <p>I am the author of the book Dancing With My Fate</p>
+  </div>
   <div class="main">
-    <img src = "closeup_cover.png" alt = "cover" class = "center" />
-    <h2 style="text-align:center">If you want the truth, you have to find it yourself.</h2>
-    <p style="text-align:center">But I can help you craft your strategy for finding it.</p>
-    <p style="text-align:center">The book you are ordering is the culmination of many years of investigation of the world, sometimes slow and deliberate, more often manic and compulsive. The questions that I've asked, the classes I have taken from the school of hard-knocks, and finally, the insights I�~@~Yve discerned. A survival guide, yes, but more than that - the documentation of my philosophical, spiritual, practical metamorphoses into a creature that is uniquely at home in the toxic and seemingly nonsensical environment we find ourselves in. </p>
+    <h2>Buy Dancing With My Fate</h2>
+    <h5>Pre-Order, planned publication date is June 30th, 2021</h5>
+    <div class="closeup_cover.png" style="height:200px;">Image</div>
+    <p>Pre-order today and be one of the first to receive the book upon publication.  Additionally, I will personally sign all copies ordered prior to the publication date.  Order today by clicking the link above!</p>
     <br>
   </div>
 </div>
 
 <div class="footer">
-  <h2>Dancing With My Fate, 2021</h2>
+  <h6>Dancing With My Fate, 2021</h6>
 </div>
 
 </body>
