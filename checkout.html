@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="mystyle.css">
+<title>Dancing With My Fate</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+<script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+
+<div class="header">
+  <h1>DANCING WITH MY FATE</h1>
+  <p>If you want the truth, you have to find it for yourself... but I can help you craft your strategy for finding it.</p>
+</div>
+
+<div class="navbar">
+  <a href="https://dancingwithmyfate.com/">Home</a>
+  <a href="https://dancingwithmyfate.com/about.html">About</a>
+  <a href="https://dancingwithmyfate.com/checkout.html" class="active">Buy The Book</a>
+  <a href="https://dancingwithmyfate.com/contact.html" class="right">Contact</a>
+</div>
+  <div class="main">
+  <section>
+
+    <div class="product">
+
+      <img
+
+        src="closeup_cover.png"
+
+        alt="The cover of Dancing With My Fate"
+
+      />
+
+      <div class="description">
+
+        <h3>Dancing With My Fate</h3>
+
+        <h5>$14.99</h5>
+
+      </div>
+
+    </div>
+
+    <button type="button" id="checkout-button">Checkout</button>
+
+  </section>
+  </div>
+</div>
+
+<div class="footer">
+  <h6>Dancing With My Fate, 2021</h6>
+</div>
+
+</body>
+<script type="text/javascript">
+
+  // Create an instance of the Stripe object with your publishable API key
+
+  var stripe = Stripe("pk_live_51IugurEphTUiXASfY5tTt7JT7N76zTcwyidwW35cp6i00Ai4hnwRJFWvSU6w6sgWQZdTkOQcZBBrfbMpGdD6agaP00orJXVGLh");
+
+  var checkoutButton = document.getElementById("checkout-button");
+
+  checkoutButton.addEventListener("click", function () {
+
+    fetch("/create-checkout-session.php", {
+
+      method: "POST",
+
+    })
+
+      .then(function (response) {
+
+        return response.json();
+
+      })
+
+      .then(function (session) {
+
+        return stripe.redirectToCheckout({ sessionId: session.id });
+
+      })
+
+      .then(function (result) {
+
+        // If redirectToCheckout fails due to a browser or network
+
+        // error, you should display the localized error message to your
+
+        // customer using error.message.
+
+        if (result.error) {
+
+          alert(result.error.message);
+
+        }
+
+      })
+
+      .catch(function (error) {
+
+        console.error("Error:", error);
+
+      });
+
+  });
+
+</script>
+</html>
