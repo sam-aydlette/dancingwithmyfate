@@ -1,129 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Page Title</title>
+<link rel="stylesheet" href="mystyle.css">
+<title>Dancing With My Fate</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
-
-/* Style the body */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
-
-/* Header/logo Title */
-.header {
-  padding: 80px;
-  text-align: center;
-  background: #000000;
-  color: white;
-}
-
-/* Increase the font size of the heading */
-.header h1 {
-  font-size: 40px;
-}
-
-/* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
-}
-
-/* Style the navigation bar links */
-.navbar a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-}
-
-
-/* Right-aligned link */
-.navbar a.right {
-  float: right;
-}
-
-/* Change color on hover */
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* Active/current link */
-.navbar a.active {
-  background-color: #666;
-  color: white;
-}
-
-/* Column container */
-.row {  
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-}
-
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
-.side {
-  -ms-flex: 30%; /* IE10 */
-  flex: 30%;
-  background-color: #f1f1f1;
-  padding: 20px;
-}
-
-/* Main column */
-.main {   
-  -ms-flex: 70%; /* IE10 */
-  flex: 70%;
-  background-color: white;
-  padding: 20px;
-}
-
-/* Fake image, just for this example */
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
-}
-
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #000000;
-}
-
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row {   
-    flex-direction: column;
-  }
-}
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width: 100%;
-  }
-}
-</style>
 </head>
 <body>
 
 <div class="header">
-  <h1>Dancing With My Fate</h1>
+  <h1>DANCING WITH MY FATE</h1>
   <p>If you want the truth, you have to find it for yourself... but I can help you craft your strategy for finding it.</p>
 </div>
 
@@ -137,15 +23,14 @@ body {
 <div class="row">
   <div class="side">
     <h2>About Me</h2>
-    <h5>Photo of me:</h5>
-    <div class="self_image.jpeg" style="height:200px;">Image</div>
-    <p>I am the author of the book Dancing With My Fate</p>
+    <p><img src="self_image.png" alt="self_image" align="middle"></p>
+    <p>Sam Aydlette is the author of the book <i>Dancing With My Fate.</i></p>
   </div>
   <div class="main">
     <h2>Buy Dancing With My Fate</h2>
-    <h5>Pre-Order, planned publication date is June 30th, 2021</h5>
-    <div class="closeup_cover.png" style="height:200px;">Image</div>
-    <p>Pre-order today and be one of the first to receive the book upon publication.  Additionally, I will personally sign all copies ordered prior to the publication date.  Order today by clicking the link above!</p>
+    <h5>Out Now!</h5>
+    <p><img src="closeup_cover.png" alt="cover" align="middle"></p>
+    <p>Order today by clicking the link above!</p>
     <br>
   </div>
 </div>
